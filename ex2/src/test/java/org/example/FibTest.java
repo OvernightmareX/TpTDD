@@ -10,12 +10,21 @@ public class FibTest {
     private Fib fib;
 
     @Test
-    public void TestGetFibSeriesWhenRange_1_ThenResultList_NotEmpty_AndContain_0(){
+    public void TestGetFibSeriesWhenRange_1_ThenResultList_NotEmpty(){
 
         fib = new Fib(1);
         List<Integer> fibs = fib.getFibSeries();
 
         Assertions.assertFalse(fibs.isEmpty());
+        Assertions.assertEquals(0, fibs.get(0));
+    }
+
+    @Test
+    public void TestGetFibSeriesWhenRange_1_ThenResultList_Contain_0(){
+
+        fib = new Fib(1);
+        List<Integer> fibs = fib.getFibSeries();
+
         Assertions.assertEquals(0, fibs.get(0));
     }
 
