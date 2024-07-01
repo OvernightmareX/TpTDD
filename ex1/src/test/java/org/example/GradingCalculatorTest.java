@@ -18,7 +18,7 @@ public class GradingCalculatorTest {
             "65, 55, F",
             "50, 90, F"
     })
-    public void TestGetGrade(int score, int attendance, char expectedGrade){
+    public void TestGetGrade_WhenGradeAndPresence_ThenAwaitedGrade(int score, int attendance, char expectedGrade){
         gradingCalculator = new GradingCalculator(score, attendance);
         char result = gradingCalculator.getGrade();
 
