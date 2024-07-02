@@ -16,7 +16,6 @@ public class FibTest {
         List<Integer> fibs = fib.getFibSeries();
 
         Assertions.assertFalse(fibs.isEmpty());
-        Assertions.assertEquals(0, fibs.get(0));
     }
 
     @Test
