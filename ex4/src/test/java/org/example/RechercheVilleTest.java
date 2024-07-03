@@ -20,7 +20,7 @@ public class RechercheVilleTest {
 
     @Test
     public void TestRechercheVille_WhenRechercher_LessThan_2_ThenThrowNotFoundException(){
-        Assertions.assertThrows(NotImplementedException.class, () -> rechercheVille.rechercher("P" ));
+        Assertions.assertThrows(NotFoundException.class, () -> rechercheVille.rechercher("P" ));
     }
 
     @Test

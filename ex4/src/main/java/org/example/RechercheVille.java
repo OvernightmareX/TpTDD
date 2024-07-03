@@ -9,12 +9,13 @@ public class RechercheVille {
             "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul");
 
     public List<String> rechercher(String mot)  {
-        if(mot.length() < 2 && !mot.equals("*"))
-            throw new NotImplementedException();
+        if(mot.length() < 2){
+            if(mot.equals("*"))
+                return villes;
+            else
+                throw new NotFoundException();
+        }
 
-        if(mot.equals("*"))
-            return villes;
-        
         List<String> villesRechercher = new ArrayList<>(); 
         for(String ville : villes){
             if(ville.toUpperCase().startsWith(mot.toUpperCase()) || ville.toUpperCase().contains(mot.toUpperCase()))
