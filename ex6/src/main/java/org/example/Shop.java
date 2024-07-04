@@ -23,11 +23,10 @@ public class Shop {
                 .findFirst()
                 .orElse(null);
 
-        int coeffQuality = 1;
-
         if(productFound == null)
             return;
 
+        int coeffQuality = 1;
         productFound.setSellIn(productFound.getSellIn() - 1);
 
         if(productFound.getName().equals("Brie vieilli"))

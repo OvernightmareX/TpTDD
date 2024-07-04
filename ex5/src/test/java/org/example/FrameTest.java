@@ -129,6 +129,7 @@ public class FrameTest {
         frame.makeRoll();
         frame.makeRoll();
         frame.makeRoll();
+        frame.makeRoll(); //Tente un roll mais ne fera rien (interdit de lancer 4 fois)
 
         Assertions.assertFalse(frame.canMakeRoll());
     }

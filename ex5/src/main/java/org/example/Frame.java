@@ -1,11 +1,8 @@
 package org.example;
 
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 public class Frame {
     private int score = 0;
     private boolean lastFrame;
@@ -19,8 +16,11 @@ public class Frame {
     }
 
     public boolean canMakeRoll(){
+        if(rolls.isEmpty())
+            return true;
+
         if(lastFrame)
-            return rolls.size() < 2 || (rolls.size() == 2 && (score >= 10 && score <= 20));
+            return rolls.size() < 2 || (rolls.size() == 2 && score >= 10);
 
         return rolls.size() < 2 && score != 10;
     }
@@ -32,5 +32,9 @@ public class Frame {
         Roll roll = new Roll(generateur.randomPin(10 - (score % 10)));
         rolls.add(roll);
         score += roll.getPins();
+    }
+
+    public int getScore() {
+        return score;
     }
 }
